@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-family: "PingFangRegular","微软雅黑","Microsoft","Helvetica Neue",sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none; }
+
+img {
+  border: 0;
+}

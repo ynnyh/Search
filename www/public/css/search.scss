@@ -1,0 +1,175 @@
+@import "_base";
+$theme-family:'微软雅黑';
+
+.search{
+  width:$limit;
+  padding:0 100px;
+  height:105px;
+  margin:auto;
+  position:relative;
+  background:#fff;
+  box-shadow:0 3px 5px rgba(0,0,0,.1);
+  .search-container{
+    width:100%;
+    height:90px;
+    //列表
+    .search-list{
+      width:610px;
+      height:45px;
+      margin:auto;
+      color:#6b6b6b;
+      position:relative;
+      .list-li{
+        display:block;
+        width:36px;
+        height:20px;
+        text-align:center;
+        line-height:20px;
+        margin:20px 15px 0 10px;
+        cursor:pointer;
+        float:left;
+        &:nth-child(2){
+          background:#ff8d1d;
+          color:#fff;
+        }
+      }
+    }
+  //  搜索框
+    .search-form{
+      width:770px;
+      height:45px;
+      position:relative;
+      top:-4px;
+      margin-left:50px;
+      //左侧可点击切换图标
+      .search-logo{
+        width:150px;
+        height:52px;
+        position:absolute;
+        top:-4px;
+        left:-17px;
+        cursor:pointer;
+        display:block;
+        .search-all-logo{
+          width:137px;
+          height:52px;
+          background-image:url('/public/img/all.png');
+          background-repeat:no-repeat;
+        }
+        .bottom{
+          display:block;
+          width:15px;
+          height:15px;
+          position:absolute;
+          top:23px;
+          right:0;
+          background-image:url('/public/img/all.png');
+          background-repeat:no-repeat;
+          background-position:-376px -285px;
+        }
+      }
+    //  点击显示的盒子
+      .search-box{
+        width:120px;
+        height:4px;
+        position:absolute;
+        bottom:-7px;
+        left:-5px;
+        z-index:5;
+        .box-ul{
+          width:118px;
+          padding:0 2px;
+          position:absolute;
+          top:4px;
+          left:1px;
+          border:1px solid #cecece;
+          border-top:0;
+          background:#fff;
+          .data-list{
+            display:block;
+            padding-left:18px;
+            font-size:14px;
+            letter-spacing:.6em;
+            height:40px;
+            line-height:40px;
+            border-bottom:1px solid #eee;
+            cursor:pointer;
+            span{
+              margin-right:13px;
+              width:20px;
+              height:40px;
+              display:block;
+              float:left;
+              background-image:url('/public/img/all.png');
+              background-repeat:no-repeat;
+            }
+            &:nth-child(3){
+              letter-spacing:.2em;
+            }
+            &:nth-child(6){
+              letter-spacing: .2em;
+            }
+            &:hover{
+              background-color:#f1f1f1;
+            }
+          }
+          .data-list.current{
+            background-color:#f1f1f1;
+          }
+        }
+      }
+
+    //  不同搜索引擎的搜索框
+      #search-form{
+        display:block;
+        width:529px;
+        height:38px;
+        position:absolute;
+        left:140px;
+        top:7px;
+        background:#fff;
+
+        .search-input{
+          width:529px;
+          height:38px;
+          border:1px solid #d8d8d8;
+          border-radius:2px;
+          position:relative;
+          input{
+            width:526px;
+            height:22px;
+            position:absolute;
+            top:0;
+            left:0;
+            text-indent:10px;
+            margin-top:8px;
+            font-size:14px;
+            vertical-align: middle;
+            outline:0;
+            border:0;
+          }
+          &:hover{
+            border-color:#b3b3b3;
+          }
+        }
+
+        .search-submit{
+          width:98px;
+          height:38px;
+          position:absolute;
+          top:0;
+          left:528px;
+          border:1px solid #3385ff;
+          background-color:#3385ff;
+          color:#fff;
+          outline:0;
+          font-size:18px;
+          text-align:center;
+          line-height:35px;
+          cursor:pointer;
+          border:0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,150 @@
+CREATE DATABASE search;
+
+创建lists表
+DROP TABLE IF EXISTS lists;
+CREATE TABLE lists(
+    id INT(12) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    eng VARCHAR (255) NOT NULL,
+    position VARCHAR (255) NOT NULL,
+    big VARCHAR (255) NOT NULL
+)DEFAULT CHARSET=utf8;
+//插入数据
+INSERT INTO lists (id,name,eng,position,big) VALUES
+(1,'百度','baidu','-140px -9px','0 0'),
+(2,'搜狗','sougou','-140px -166px','0 -156px'),
+(3,'多重搜','isearch','-299px -270px','-163px -260px'),
+(4,'必应','bing','-140px -113px','0 -104px'),
+(5,'淘宝','taobao','-140px -269px','0 -260px'),
+(6,'爱淘宝','aitaobao','-140px -321px','0 -312px'),
+(7,'优酷','youku','-140px -218px','0 -208px');
+
+//创建server表
+DROP TABLE IF EXISTS server;
+CREATE TABLE server(
+    id INT(12) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    act VARCHAR(255) NOT NULL,
+    name VARCHAR (255) NOT NULL,
+    val VARCHAR (255) NOT NULL,
+    bc VARCHAR (255) NOT NULL
+)DEFAULT CHARSET=utf8;
+//插入数据
+INSERT INTO server (id,act,name,val,bc) VALUES
+(1,'https://www.baidu.com/s','wd','百度一下','#3385ff'),
+(2,'https://www.sogou.com/sogou','query','搜狗搜索','#fa4815'),
+(3,'http://s.uc.cn/','q','多重搜索','#ff7e00'),
+(4,'http://cn.bing.com/search','q','必应搜索','#ffb802'),
+(5,'https://s.taobao.com/search','q','淘宝搜索','#ff4000'),
+(6,'http://ai.taobao.com/search/index.htm','key','淘宝搜索','#f03a26'),
+(7,'http://www.soku.com/v','keyword','优酷搜索','#00a7e0');
+
+//创建tuijian表
+DROP TABLE IF EXISTS usually;
+CREATE TABLE usually(
+    id INT(12) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR (255) NOT NULL,
+    url VARCHAR (255) NOT NULL
+)DEFAULT CHARSET=utf8;
+//插入数据
+INSERT INTO usually (id,name,url) VALUES
+(1,'百度一下','https://www.baidu.com/s'),
+(2,'爱淘宝','http://ai.taobao.com/search/index.htm'),
+(3,'优酷','http://www.soku.com/v'),
+(4,'爱奇艺','http://www.iqiyi.com/'),
+(5,'腾讯视频','https://v.qq.com/');
+
+
+
+//创建title表
+DROP TABLE IF EXISTS title;
+CREATE TABLE title(
+    id INT(12) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR (255) NOT NULL
+)DEFAULT CHARSET=utf8;
+
+//插入数据
+INSERT INTO title (id,title) VALUES
+(1,'前端框架'),
+(2,'移动框架'),
+(3,'JS插件'),
+(4,'工具'),
+(5,'移动开发');
+
+//创建title表中详细分类
+DROP TABLE IF EXISTS detail;
+CREATE TABLE detail(
+    det_id INT (12) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR (255) NOT NULL,
+    title VARCHAR (255) NOT NULL,
+    url VARCHAR (255) NOT NULL,
+    id INT(12) NOT NULL,
+    FOREIGN KEY (id)
+    REFERENCES title (id)
+)DEFAULT CHARSET=utf8;
+
+//插入数据
+INSERT INTO detail (det_id,name,title,url,id) VALUES
+(1,'LESS中国','LESS中国','http://www.lesscss.net/',1),
+(2,'node.js','Node.js','https://nodejs.org/en/',1),
+(3,'bootflat','bootflat','http://bootflat.github.io/index.html',1),
+(4,'Easy UI中文网','jquery EasyUI中文网','http://www.jeasyui.net/',1),
+(5,'Bootstrap前端框架','Bootstrap前端框架','http://www.bootcss.com/',1),
+(6,'Reactjs','创建用户界面的 javascript 库','http://www.reactjs.cn/',1),
+(7,'three.js','WebGL框架','https://threejs.org/',1),
+(8,'thinkjs','Node.js MVC框架','https://thinkjs.org/',1),
+(9,'Amaze UI','Amaze UI','http://amazeui.org/',1),
+(10,'ZUI框架','ZUI','http://www.zui.sexy/',1),
+(11,'BUI','BUI','http://www.builive.com/',1),
+(12,'kissyui','阿里集团JS类库','http://docs.kissyui.com/',1),
+(13,'Semantic UI','Semantic UI前端框架','https://semantic-ui.com/',1),
+(14,'jsList','轻量级js库','http://jslite.io/',1),
+(15,'APICloud','APICloud','http://www.apicloud.com/',2),
+(16,'Framework7','Framework7 移动HTML框架','http://framework7.taobao.org/',2),
+(17,'light7','light7','http://www.light7.org/',2),
+(18,'SUI mobile','SUI mobile','http://m.sui.taobao.org/components/',2),
+(19,'Frozen UI','Frozen UI 腾讯移动端框架','http://frozenui.github.io/',2),
+(20,'zeptojs','zeptojs','http://zeptojs.com/',2),
+(21,'EZoApp','EZoApp','https://ezoui.com/app/zh-tw/zh-cn/index.html',2),
+(22,'codiqa','jquery mobile UI builder(jquery mobileUI编辑器)','https://codiqa.com/',2),
+(23,'NW.JS','NW.JS','https://nwjs.io/',2),
+(24,'Weex','阿里Weex','https://weex-project.io/references/',2),
+(25,'WeUI','为微信Web服务量身设计','https://weui.io/',2),
+(26,'应用家YYjiacms','App应用市场网站系统','http://www.yyjia.com/',2),
+(27,'jquerymobile','jquerymobile','http://jquerymobile.com/',2),
+(28,'jQuery API','jQuery API 中文文档','http://www.jquery123.com/',3),
+(29,'Highcharts中文站','Highcharts JS图表站','https://www.hcharts.cn/',3),
+(30,'WebUploader','文件上传组件','http://fex.baidu.com/webuploader/',3),
+(31,'ECharts图表插件','ECharts','http://echarts.baidu.com/',3),
+(32,'morris图表插件','morris.js图表插件','https://github.com/morrisjs/morris.js/',3),
+(33,'jQuery.bsgrid','jQuery.bsgrid','http://thebestofyouth.com/bsgrid/',3),
+(34,'Bootstrap Table','Bootstrap Table表格插件','http://bootstrap-table.wenzhixin.net.cn/zh-cn/',3),
+(35,'Datatables中文网','Datatables jQuery表格插件','http://datatables.club/',3),
+(36,'AngularJS中文社区','AngularJS中文社区','http://www.angularjs.cn/',3),
+(37,'boot CDN服务','bootstrap中文网开放CDN服务','http://www.bootcdn.cn/',3),
+(38,'前端公共库CDN服务','360网站卫士常用前端公共库CDN服务','http://libs.useso.com/js.php',3),
+(39,'jQuery Tools','非常优秀的Web UI库','http://jquerytools.org/',3),
+(40,'图片在线压缩优化','图片在线压缩优化','https://tinypng.com/',4),
+(41,'前端测试服务','前端测试服务','http://fts.aliyun.com/',4),
+(42,'云配色','网页配色','http://card.qdsay.com/adapt?url=http://www.h-ui.net/',4),
+(43,'快切助手','在线网页切图工具，智能网页制作工具','http://kuaiqie.qdsay.com/',4),
+(44,'开发工具箱','开发工具箱','http://www.box3.cn/',4),
+(45,'CSS3阴影在线生成器','CSS3阴影在线生成器','http://layerstyles.org/builder.html',4),
+(46,'问卷网','问卷网','https://www.wenjuan.net/',4),
+(47,'Validation Engine','jQuery Validation Engine','http://code.ciaoca.com/jquery/validation_engine/',4),
+(48,'麦客CRM','麦客CRM','http://www.mikecrm.com/',4),
+(49,'IcoMoon','在线图标字体制作','https://icomoon.io/',4),
+(50,'百度脑图','百度脑图','http://naotu.baidu.com/',4),
+(51,'niceValidator','niceValidator表单验证','http://niceue.com/validator/',4),
+(52,'IOS开源代码库','IOS开源代码库','http://code4app.com/',5),
+(53,'eoeAndroid社区','Android开发者社区','http://www.eoeandroid.com/',5),
+(54,'DataEye','移动端数据分析服务平台','http://www.dataeye.com/',5),
+(55,'信鸽','腾讯云移动推送','http://xg.qq.com/',5),
+(56,'API Store','API Store','http://apistore.baidu.com/',5),
+(57,'jpush极光推送','极光推送','http://www.jpush.cn/',5),
+(58,'环信','即时通讯云','http://www.easemob.com/',5),
+(59,'融云','即时通讯云','http://www.rongcloud.cn/',5),
+(60,'容联','即时通讯云','http://www.yuntongxun.com/',5),
+(61,'App内分享','App内分享','http://sharesdk.cn/',5),
+(62,'Android开源代码库','Android开源代码库','http://a.code4app.com/',5),
+(63,'AnySDK','AnySDK','http://www.anysdk.com/',5),
+(64,'蒲公英','应用内测专家','http://www.pgyer.com/',5);

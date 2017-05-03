@@ -1,0 +1,48 @@
+@import "_base";
+
+
+.header{
+  width:100%;
+  height:$height;
+  //头部
+  .header-container{
+    width:$limit;
+    height:$height;
+    margin:auto;
+    position:relative;
+    // 左侧logo链接
+    .logo-link{
+      display:block;
+      width:190px;
+      height:80px;
+      float:left;
+      font-size:24px;
+      line-height:$height;
+      color:$words;
+      .logo{
+        width:190px;
+        height:80px;
+      }
+    }
+  //  中间导航
+    .middle{
+      line-height:$height;
+      overflow:hidden;
+      float:left;
+      .daohang{
+        float:left;
+        font-size:18px;
+        margin-right:50px;
+        color:$words;
+        &:hover{
+          color:#ff8d1d;
+        }
+      }
+    }
+  //  天气
+    .weather{
+      float:right;
+      padding-top:7px;
+    }
+  }
+}
